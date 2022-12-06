@@ -43,7 +43,7 @@ with st.container():
         )
     with right_column:
         st_lottie(lottie_coding, height=300, key="coding")
-        
+    st.write(os.getcwd(), os.listdir())   
 # ---- PREDICTOR ----
 import pickle
 import bz2file as bz2
@@ -51,6 +51,9 @@ import pandas as pd
 import datetime as dt
 
 import os
+print(os.getcwd())
+print(os.listdir())
+
 
 #pickle file too large for github
 #model = pickle.load(open('model2.p','rb'))  
@@ -104,7 +107,6 @@ def predict_fire(date, FIRE_SIZE, LATITUDE, LONGITUDE, FIRE_DURATION, OWNER_DESC
 # ---- MODEL FORM ----
 with st.container():
     st.write("---")
-    st.write(os.getcwd(), os.listdir())
 
     #st.header("Make a Prediction")
     
