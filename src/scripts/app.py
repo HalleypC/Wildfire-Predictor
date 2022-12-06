@@ -20,11 +20,9 @@ st.set_page_config(page_title="My Webpage", page_icon=":fire:", layout="centered
 
 # ---- HEADER SECTION ----
 with st.container():
-    st.subheader("By: Halley Chopra")
     st.title("Wildfire Predictor")
-    st.write(
-        "This is the app for my final project, yay"
-    )
+    st.subheader("By: Halley Chopra")
+    st.write("To more effectively develop insights, tools, and make data driven decisions for the prevention and mitigation of wildfire, the cause of the wildfire is essential. With the cause known, we can perform data driven analyses to improve the allocation of targeted resouces and strategies to improve prevention and mitigation.")
     st.write("[Explore the project Repo >](https://github.com/HalleypC/Wildfire-Predictor)")
     
 # ---- PREDICTOR INTRO ----
@@ -36,10 +34,11 @@ with st.container():
         st.write("##")
         st.write(
             """
-            I have created a model that can predict the cause of a wildfire with an accuracy of 84%. The model will predict one of 3 possible causes.
+            This model can predict the cause of a wildfire with an accuracy of up to 84%. The model will predict one of 3 possible causes.
             - Natural: Lightning
             - Human Accident: Equipment Use, Debris Burning, Campfire, Smoking, Children, Powerline, Fireworks, Railroad, Structure
             - Malicious: Arson
+            Scroll down to make a prediction.
             """
         )
     with right_column:
@@ -94,18 +93,17 @@ def predict_fire(date, FIRE_SIZE, LATITUDE, LONGITUDE, FIRE_DURATION, OWNER_DESC
 # ---- MODEL FORM ----
 with st.container():
     st.write("---")
-    st.header("Make a Prediction")
-    #st.write("##")
+    #st.header("Make a Prediction")
     
     html_temp = """
     <div style="background:#025246 ;padding:10px">
-    <h2 style="color:white;text-align:center;">Wildfire Cause Prediction ML App </h2>
+    <h2 style="color:white;text-align:center;">Wildfire Cause Prediction</h2>
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html = True)
-
+    st.write("##")
     date = st.date_input("Fire Ignition Date")
-    FIRE_SIZE = st.number_input("Fire Size (hectares)")
+    FIRE_SIZE = st.number_input("Fire Size (acres)")
     LATITUDE = st.number_input("Latitide")
     LONGITUDE = st.number_input("Longitude")
     FIRE_DURATION = st.number_input("Fire Duration (days)")
@@ -113,25 +111,25 @@ with st.container():
                                ['PRIVATE', 'USFS', 'BLM', 'MISSING/NOT SPECIFIED',
                                 'STATE OR PRIVATE', 'COUNTY', 'UNDEFINED FEDERAL', 'STATE', 'FWS',
                                 'NPS', 'BOR', 'MUNICIPAL/LOCAL', 'TRIBAL', 'OTHER FEDERAL', 'BIA'])
-
+    
+#Results:
+    natural_html = """  
+    <div style="background-color:#edd1cb; padding:10px >
+    <h2 style="color:white;text-align:center;">Natural Cause - Lightning</h2>
+    </div>
+    """
+    accident_html = """  
+    <div style="background-color:#edd1cb ;padding:30px >
+    <h2 style="color:white;text-align:left;">Accidental Human Cause</h2>
+    </div>
+    """
+    mal_html= """
+    <div style="background-color:#edd1cb; padding:10px >
+    <h2 style="color:black;text-align:center;">Malicious Cause - Arson</h2>
+    </div>
+    """
     
 #Button: 
-    natural_html ="""  
-      <div style="background-color:#80ff80; padding:10px >
-      <h2 style="color:white;text-align:center;"> Natural Cause - Lightning</h2>
-      </div>
-    """
-    accident_html ="""  
-      <div style="background-color:#F4D03F; padding:10px >
-      <h2 style="color:white;text-align:center;"> Accidental Human Cause</h2>
-      </div>
-    """
-    mal_html="""  
-      <div style="background-color:#F08080; padding:10px >
-       <h2 style="color:black ;text-align:center;"> Malicious Cause - Arson</h2>
-       </div>
-    """
-
     if st.button("Predict the cause"):
         output = predict_fire(date, FIRE_SIZE, LATITUDE, LONGITUDE, FIRE_DURATION, OWNER_DESCR)
         st.success('Prediction successful.')
