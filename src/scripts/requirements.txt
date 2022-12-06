@@ -3,3 +3,4 @@ pandas
 streamlit_lottie
 datetime
 bz2file
+sklearn
