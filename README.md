@@ -6,7 +6,7 @@
   <a href="https://github.com/HalleypC">
     <img src="https://cdn-icons-png.flaticon.com/512/3043/3043608.png" alt="Logo" width="80" height="80"/> 
   </a>
-<h3 align="center">Wildfire Predictor</h3>
+<h3 align="center">Wildfire Predictor & Analysis</h3>
   <p align="center">
     A Data Science and Machine Learning Project
     <br />
@@ -90,9 +90,11 @@
 
 ### Results
 * With the cause of fires predicted we can run analytics to identify clustered locations, proximity to points of interest, or a number of other features that could help organizations make decisions. 
-* Here we see that 
+* For example in the figure below we can see that the size vs. day of year cluster very differently for the three causes. Natural fires cluster more narrowly whereas human caused fires (Accidental and Malicious) cluster more loosely. This figure shows the time of year in which resources are needed for the different causes. 
+* From the figure we can also see that natual fires occur more frequently at higher elevations, denoted by the darker hue. 
+![results_map](./output/figures/Result_SizevsDOY.png)
 
-![results](./output/figures/Result_Labels_Map.png)
+Feel free to reach out to me on linkedin for more results and discussion on results!
 
 ### **Technologies used**
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
