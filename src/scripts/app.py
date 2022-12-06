@@ -46,9 +46,17 @@ with st.container():
         
 # ---- PREDICTOR ----
 import pickle
+import bz2file as bz2
 import pandas as pd
 import datetime as dt
-model = pickle.load(open('model2.p','rb'))  
+
+#pickle file too large for github
+#model = pickle.load(open('model2.p','rb'))  
+def decompress_pickle(file):
+    data = bz2.BZ2File(file, 'rb')
+    data = pickle.load(data)
+    return data
+model = decompress_pickle('pickle_compressed.pbz2')
 
 from Preprocessing import weather_condition, open_weather_api     #my homemade functions
 
