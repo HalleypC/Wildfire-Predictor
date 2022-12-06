@@ -5,6 +5,10 @@ import streamlit as st
 import requests
 from streamlit_lottie import st_lottie
 
+import os
+print(os.getcwd())
+print(os.listdir())
+
 # ---- LOTTIE ----
 def load_lottieurl(url):
     r = requests.get(url)
@@ -50,9 +54,7 @@ import bz2file as bz2
 import pandas as pd
 import datetime as dt
 
-import os
-print(os.getcwd())
-print(os.listdir())
+
 
 
 #pickle file too large for github
