@@ -53,9 +53,7 @@ import pickle
 import bz2file as bz2
 import pandas as pd
 import datetime as dt
-
-
-
+import sklearn 
 
 #pickle file too large for github
 #model = pickle.load(open('model2.p','rb'))  
