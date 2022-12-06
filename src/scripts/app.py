@@ -50,8 +50,11 @@ import bz2file as bz2
 import pandas as pd
 import datetime as dt
 
+import os
+
 #pickle file too large for github
 #model = pickle.load(open('model2.p','rb'))  
+
 def decompress_pickle(file):
     data = bz2.BZ2File(file, 'rb')
     data = pickle.load(data)
@@ -101,6 +104,8 @@ def predict_fire(date, FIRE_SIZE, LATITUDE, LONGITUDE, FIRE_DURATION, OWNER_DESC
 # ---- MODEL FORM ----
 with st.container():
     st.write("---")
+    st.write(os.getcwd(), os.listdir())
+
     #st.header("Make a Prediction")
     
     html_temp = """
