@@ -1,13 +1,11 @@
 # run in conda under the virtual environment lighthouse_env
 # streamlit run app.py
 
+#deployed app: https://halleypc-wildfire-predictor-srcscriptsapp-93qsj3.streamlit.app/
+
 import streamlit as st
 import requests
 from streamlit_lottie import st_lottie
-
-import os
-print(os.getcwd())
-print(os.listdir())
 
 # ---- LOTTIE ----
 def load_lottieurl(url):
@@ -53,7 +51,7 @@ import pickle
 import bz2file as bz2
 import pandas as pd
 import datetime as dt
-import sklearn 
+# import sklearn 
 
 #pickle file too large for github
 #model = pickle.load(open('model2.p','rb'))  
