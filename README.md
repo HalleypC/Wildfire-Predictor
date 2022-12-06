@@ -79,7 +79,7 @@
 * Models used : **Random Forest, SVM Classifier, XGboost**.
 * After three iterations, the Random Forest Model proved to be the most reliable and is the one used in the app.
 
-![results](./output/figures/Results.png)
+![results](./output/figures/Result_F1.png)
 
 ### Streamlit
 * I wanted to build a proof of concept that this model could be used by organizations to help them label their wildfire causes. 
@@ -93,7 +93,7 @@
 * With the cause of fires predicted we can run analytics to identify clustered locations, proximity to points of interest, or a number of other features that could help organizations make decisions. 
 * For example in the figure below we can see that the size vs. day of year cluster very differently for the three causes. Natural fires cluster more narrowly whereas human caused fires (Accidental and Malicious) cluster more loosely. This figure shows the time of year in which resources are needed for the different causes. 
 * From the figure we can also see that natual fires occur more frequently at higher elevations, denoted by the darker hue. 
-![results_map](./output/figures/Result_SizevsDOY.png)
+![results_map](./output/figures/Result_SizevsDOY2.png)
 
 Feel free to reach out to me on linkedin for more results and discussion on results!
 
