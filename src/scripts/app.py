@@ -64,7 +64,7 @@ def decompress_pickle(file):
     data = bz2.BZ2File(file, 'rb')
     data = pickle.load(data)
     return data
-model = decompress_pickle('pickle_compressed.pbz2')
+model = decompress_pickle('src/scripts/pickle_compressed.pbz2')
 
 from Preprocessing import weather_condition, open_weather_api     #my homemade functions
 
