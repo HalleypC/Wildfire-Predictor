@@ -45,7 +45,7 @@ with st.container():
         )
     with right_column:
         st_lottie(lottie_coding, height=300, key="coding")
-    st.write(os.getcwd(), os.listdir())   
+        
 # ---- PREDICTOR ----
 import pickle
 import bz2file as bz2
