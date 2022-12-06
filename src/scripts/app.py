@@ -117,7 +117,7 @@ with st.container():
     st.write("##")
     date = st.date_input("Fire Ignition Date")
     FIRE_SIZE = st.number_input("Fire Size (acres)")
-    LATITUDE = st.number_input("Latitide")
+    LATITUDE = st.number_input("Latitude")
     LONGITUDE = st.number_input("Longitude")
     FIRE_DURATION = st.number_input("Fire Duration (days)")
     OWNER_DESCR = st.selectbox("Choose the Land Owner Type (Name of entity responsible for managing the land at the point of origin of the fire at the time of the incident.)",
