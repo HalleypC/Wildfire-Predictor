@@ -83,10 +83,11 @@
 
 ### Streamlit
 * I wanted to build a proof of concept that this model could be used by organizations to help them label their wildfire causes. 
-* I imported the Streamlit module and created a page that takes the minumum number of inputs.
+* I imported the Streamlit module and created a page that allow for user input and returns a prediction.
+* Although my model takes 19 features as input, only 6 are required from the user in the app. The rest of the features are extracted behind the scenes for a more simple user experience. 
 * The app calls the Open Weather API to extract the relevent weather features and calculates the remaining engineered features before returning the prediction. 
-* Although my model takes 19 features as input, only 6 are required to be filled in the app. The rest of the features are extracted behind the scenes for a more simple user experience. 
-* [Check out my app!](https://forest-fire-predictionv1.herokuapp.com/)
+* Using the Pickle library I saved my model to be easily used within my app. Unfortunately the pickle model was too large for deploment so I used the bz2file library to compresses the file and successfully deploy the model using the Streamlit Cloud Service.
+* [Check out my app!](https://halleypc-wildfire-predictor-srcscriptsapp-93qsj3.streamlit.app/)
 
 ### Results
 * With the cause of fires predicted we can run analytics to identify clustered locations, proximity to points of interest, or a number of other features that could help organizations make decisions. 
